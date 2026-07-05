@@ -385,7 +385,7 @@ aws-iam-security
 
 ## Author
 
-**Dennis Ayotunde**
+**Dennis Owoju**
 
 Final-Year Computer Engineering Student
 
