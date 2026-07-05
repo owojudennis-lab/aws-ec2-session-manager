@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" modified="2026-07-05T00:00:00.000Z" agent="Claude" version="24.7.17" type="device">
+  <diagram name="IAM-Security-Least-Privilege" id="iam-security-arch">
+    <mxGraphModel dx="1400" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="AWS IAM Security &amp; Least Privilege" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#232F3E;" vertex="1" parent="1">
+          <mxGeometry x="60" y="14" width="1030" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="Secure Access Control Using IAM Users, Groups, Roles, and Policies" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=0;fontColor=#545B64;" vertex="1" parent="1">
+          <mxGeometry x="60" y="46" width="1030" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Administrator (outside AWS Cloud) -->
+        <mxCell id="admin" value="Administrator" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#232F3E;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="1">
+          <mxGeometry x="90" y="90" width="56" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Management Console -->
+        <mxCell id="console" value="AWS Management Console" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#545B64;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.management_console;" vertex="1" parent="1">
+          <mxGeometry x="90" y="200" width="56" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Cloud dashed boundary -->
+        <mxCell id="awsCloud" value="AWS Cloud" style="sketch=0;points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[0,1],[0.25,1],[0.5,1],[0.75,1],[1,1],[0,0.25],[0,0.5],[0,0.75],[1,0.25],[1,0.5],[1,0.75]];outlineConnect=0;gradientColor=none;html=1;whiteSpace=wrap;fontSize=14;fontStyle=1;container=0;pointerEvents=0;collapsible=0;recursiveResize=0;shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#8C8C8C;fillColor=none;verticalAlign=top;align=left;spacingLeft=30;fontColor=#545B64;dashed=1;" vertex="1" parent="1">
+          <mxGeometry x="90" y="310" width="1000" height="900" as="geometry" />
+        </mxCell>
+
+        <!-- IAM section label -->
+        <mxCell id="iamSectionLabel" value="IAM" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#D86613;" vertex="1" parent="1">
+          <mxGeometry x="150" y="350" width="420" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- IAM User -->
+        <mxCell id="iamUser" value="IAM User&#10;CloudEngineerUser" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.user;" vertex="1" parent="1">
+          <mxGeometry x="330" y="395" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- IAM Group -->
+        <mxCell id="iamGroup" value="IAM Group&#10;CloudEngineers" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.users;" vertex="1" parent="1">
+          <mxGeometry x="330" y="510" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Customer Managed Policy -->
+        <mxCell id="policy" value="Customer Managed Policy&#10;EC2ReadOnlyCustom&#10;Grants: ec2:Describe*" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.permissions;" vertex="1" parent="1">
+          <mxGeometry x="330" y="630" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Allowed callout -->
+        <mxCell id="allowedBox" value="ALLOWED&#10;✔ DescribeInstances — View EC2 Instances&#10;✔ DescribeVpcs — View VPC&#10;✔ DescribeSecurityGroups — View Security Groups&#10;✔ View Networking" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;strokeColor=#2E7D32;fillColor=#EAF5EA;fontSize=11;fontStyle=0;fontColor=#1E5B20;align=left;spacingLeft=10;spacingTop=6;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="150" y="750" width="250" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Denied callout -->
+        <mxCell id="deniedBox" value="DENIED&#10;✖ StopInstances&#10;✖ TerminateInstances&#10;✖ RunInstances (Launch/Modify)" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;strokeColor=#B71C1C;fillColor=#FDECEC;fontSize=11;fontStyle=1;fontColor=#8A1414;align=left;spacingLeft=10;spacingTop=6;" vertex="1" parent="1">
+          <mxGeometry x="420" y="750" width="250" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- EC2 / Service-to-AWS Permissions section -->
+        <mxCell id="ec2SectionLabel" value="Amazon EC2&#10;&quot;Service-to-AWS Permissions&quot;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontStyle=1;fontColor=#D86613;" vertex="1" parent="1">
+          <mxGeometry x="760" y="345" width="280" height="42" as="geometry" />
+        </mxCell>
+
+        <!-- Private EC2 Instance -->
+        <mxCell id="ec2Instance" value="Private EC2 Instance" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ec2;" vertex="1" parent="1">
+          <mxGeometry x="870" y="400" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- IAM Role -->
+        <mxCell id="iamRole" value="IAM Role&#10;EC2-SSM-Role" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.role;" vertex="1" parent="1">
+          <mxGeometry x="870" y="530" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Managed Policy -->
+        <mxCell id="managedPolicy" value="AWS Managed Policy&#10;AmazonSSMManagedInstanceCore" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#FF9900;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=1;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.permissions;" vertex="1" parent="1">
+          <mxGeometry x="870" y="660" width="60" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- EC2 section note -->
+        <mxCell id="ec2Note" value="Allows the EC2 instance to be&#10;managed via AWS Systems Manager&#10;without SSH keys or open inbound ports" style="rounded=1;arcSize=10;whiteSpace=wrap;html=1;strokeColor=#8C8C8C;fillColor=#F5F5F5;fontSize=10;fontStyle=0;fontColor=#545B64;align=center;" vertex="1" parent="1">
+          <mxGeometry x="770" y="770" width="260" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Security Principles box -->
+        <mxCell id="principlesBox" value="Security Principles&#10;• Principle of Least Privilege&#10;• Group-Based Permission Management&#10;• Customer Managed Policies&#10;• IAM Roles for AWS Services&#10;• No Administrator Access Granted" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;strokeColor=#232F3E;fillColor=#F0F2F5;fontSize=12;fontStyle=1;fontColor=#232F3E;align=left;spacingLeft=16;spacingTop=8;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="150" y="930" width="880" height="150" as="geometry" />
+        </mxCell>
+
+        <!-- AWS Region label -->
+        <mxCell id="regionLabel" value="AWS Region: us-east-1 (N. Virginia)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;fontColor=#545B64;" vertex="1" parent="1">
+          <mxGeometry x="360" y="1240" width="420" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- ===================== Edges ===================== -->
+
+        <mxCell id="edgeAdminConsole" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="admin" target="console">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgeConsoleIam" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="console" target="iamUser">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgeUserGroup" value="Member of" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;fontColor=#232F3E;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iamUser" target="iamGroup">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgeGroupPolicy" value="Attached Policy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;fontColor=#232F3E;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iamGroup" target="policy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgePolicyAllowed" value="Allows" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;fontStyle=1;fontColor=#1E5B20;strokeColor=#2E7D32;strokeWidth=2;endArrow=block;endFill=1;exitX=0.3;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="policy" target="allowedBox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgePolicyDenied" value="Denies" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;fontStyle=1;fontColor=#8A1414;strokeColor=#B71C1C;strokeWidth=2;endArrow=block;endFill=1;exitX=0.7;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="policy" target="deniedBox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgeEc2Role" value="Assumes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;fontColor=#232F3E;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="ec2Instance" target="iamRole">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="edgeRoleManagedPolicy" value="Attached Policy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=10;fontColor=#232F3E;strokeColor=#232F3E;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="iamRole" target="managedPolicy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
